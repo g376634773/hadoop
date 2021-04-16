@@ -39,3 +39,5 @@ You may abort safely by answering 'n' or hitting ^C now.
 
 Are you sure you want to continue? (Y or N) y
 ```
+此时由standby变为active了
+![image](https://user-images.githubusercontent.com/51428270/115007184-4efb0700-9edc-11eb-81fb-f7e777ed8d97.png)
