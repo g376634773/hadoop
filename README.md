@@ -29,7 +29,7 @@ Caused by: java.io.IOException: Cannot find any valid remote NN to service reque
 解决办法：
 hdfs写的那台机器是待机状态的，所以不支持，要在active 机器中写才行
 
-执行bin/hdfs haadmin -transitionToActive --forcemanual nn1
+强制切换active，执行bin/hdfs haadmin -transitionToActive --forcemanual nn1
 [root@master hadoop-3.3.0]# bin/hdfs haadmin -transitionToActive --forcemanual nn1
 You have specified the --forcemanual flag. This flag is dangerous, as it can induce a split-brain scenario that WILL CORRUPT your HDFS namespace, possibly irrecoverably.
 
@@ -41,3 +41,6 @@ Are you sure you want to continue? (Y or N) y
 ```
 此时由standby变为active了
 ![image](https://user-images.githubusercontent.com/51428270/115007184-4efb0700-9edc-11eb-81fb-f7e777ed8d97.png)
+
+也可以不使用强制切换，一般情况是谁先启动DFSZKFailoverController，谁就是active
+./bin/hadoop-daemons.sh start zkfc
