@@ -43,4 +43,5 @@ Are you sure you want to continue? (Y or N) y
 ![image](https://user-images.githubusercontent.com/51428270/115007184-4efb0700-9edc-11eb-81fb-f7e777ed8d97.png)
 
 也可以不使用强制切换，一般情况是谁先启动DFSZKFailoverController，谁就是active
+
 ./bin/hadoop-daemons.sh start zkfc
